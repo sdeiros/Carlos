@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia HTML & CSS – Para Carlos</title>
+
+    <!-- Fonte do Google (só pra deixar bonito!) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS = aparência do site (cores, fontes, espaçamento, etc) -->
+    <style>
+        :root {
+            --cor-link: #0056b3;
+            /* Define uma "variável" de cor para links */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .conteudo {
+            max-width: 740px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.3em;
+            color: var(--cor-link);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5em;
+            margin-bottom: 0.3em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: var(--cor-link);
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+
+        .download {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #fafafa;
+            color: #000;
+        }
+
+        .download:hover {
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 80px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CONTEÚDO QUE APARECE NA TELA -->
+    <div class="conteudo">
+        <h1>João Carlos</h1>
+        <p><em>Guia simples, direto e sem firula sobre HTML e CSS (Espero que ajude)</em></p>
+
+        <h2>📌 O que é HTML?</h2>
+        <p>HTML é a **estrutura** de tudo. É como montar um esqueleto antes de colocar a roupa (CSS).</p>
+        <p>Cada pedacinho visível do site é feito com uma **tag** (essa palavra entre &lt; &gt;):</p>
+
+        <ul>
+            <!-- TÍTULOS E TEXTOS -->
+            <li><strong>Títulos:</strong> <code>&lt;h1&gt;</code> até <code>&lt;h6&gt;</code>
+                <br>H1 é o maior de todos, H6 é o menor.
+            </li>
+            <li><strong>Parágrafo:</strong> <code>&lt;p&gt;</code></li>
+
+            <!-- MÍDIAS -->
+            <li><strong>Imagens:</strong> <code>&lt;img&gt;</code>
+                <ul>
+                    <li><code>src</code> → caminho da imagem</li>
+                    <li><code>alt</code> → descrição (caso não carregue)</li>
+                </ul>
+            </li>
+            <li><strong>Vídeos:</strong> <code>&lt;video&gt;</code>
+                <ul>
+                    <li><code>src</code> → link do vídeo</li>
+                    <li><code>controls</code> → mostra botões (play, pause...)</li>
+                    <li><code>autoplay</code>, <code>muted</code>, <code>loop</code> → comportamento</li>
+                </ul>
+            </li>
+
+            <!-- ESTRUTURA -->
+            <li><strong>Divisão:</strong> <code>&lt;div&gt;</code> – Caixinhas invisíveis usadas pra agrupar elementos
+            </li>
+            <li><strong>Áreas do site:</strong>
+                <code>&lt;nav&gt;</code> (menu),
+                <code>&lt;main&gt;</code> (conteúdo),
+                <code>&lt;footer&gt;</code> (rodapé)
+            </li>
+
+            <!-- LISTAS -->
+            <br><li><strong>Listas:</strong>
+                <ul>
+                    <li><code>&lt;ul&gt;</code> → lista <strong>não ordenada</strong> (bolinhas)</li>
+                    <li><code>&lt;ol&gt;</code> → lista <strong>ordenada</strong> (numerada)</li>
+                    <li><code>&lt;li&gt;</code> → cada item da lista</li>
+                    <li>Exemplo de lista não ordenada:
+                        <ul>
+                            <li>Maçã</li>
+                            <li>Banana</li>
+                            <li>Laranja</li>
+                        </ul>
+                    </li>
+                    <li>Exemplo de lista ordenada:
+                        <ol>
+                            <li>Primeiro passo</li>
+                            <li>Segundo passo</li>
+                            <li>Terceiro passo</li>
+                        </ol>
+                    </li>
+                </ul>
+            </li>
+
+
+            <!-- CABEÇA -->
+            <br><li><strong>Cabeça do site:</strong> <code>&lt;head&gt;</code>
+                <ul>
+                    <li>Onde vai o <code>&lt;title&gt;</code> (nome da aba), fontes, estilos e scripts</li>
+                    <li>Exemplo: <code>&lt;title&gt;Meu site&lt;/title&gt;</code></li>
+                </ul>
+            </li>
+
+            <!-- CLASSES -->
+            <li><strong>Classes:</strong> <code>class</code>
+                <ul>
+                    <li>Nome dado a elementos para aplicar estilos ou interações</li>
+                    <li>Exemplo: <code>&lt;div class="caixa"&gt;</code></li>
+                    <li>No CSS: <code>.caixa { cor: azul; }</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>🎨 E o CSS?</h2>
+        <p>CSS é o que **deixa bonito**. Ele muda as cores, fontes, tamanhos, posições e tudo mais.</p>
+
+        <p>Você pode escrever CSS:
+        <ul>
+            <li><strong>Direto no HTML</strong> (como aqui, dentro da tag <code>&lt;style&gt;</code> no
+                <code>&lt;head&gt;</code>)
+            </li>
+            <li><strong>Em um arquivo separado</strong> (ex: <code>style.css</code>)</li>
+        </ul>
+
+        <h3>📏 Tamanhos e medidas:</h3>
+        <p>Usamos CSS pra definir o tamanho das coisas com <code>width</code> (largura) e <code>height</code> (altura):
+        </p>
+
+        <pre><code>width: 300px;
+height: 200px;</code></pre>
+
+        <p>Unidades:</p>
+        <ul>
+            <li><code>px</code> → pixels (fixo)</li>
+            <li><code>%</code> → relativo ao "pai"</li>
+            <li><code>rem</code> → relativo ao tamanho base do site</li>
+        </ul>
+
+        <h4>🤔 Mas o que é “elemento-pai”?</h4>
+        <p>Imagina uma caixa dentro de outra. A de fora é o <strong>pai</strong>, a de dentro é o
+            <strong>filho</strong>.
+        </p>
+
+        <p>Se o filho tem <code>width: 50%;</code>, ele vai ocupar metade da largura do pai.</p>
+
+        <h4>🔎 Exemplo prático:</h4>
+        <p><strong>HTML:</strong></p>
+        <pre><code>&lt;div class="pai"&gt;
+  &lt;div class="filho"&gt;Sou metade do pai&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <p><strong>CSS:</strong></p>
+        <pre><code>.pai {
+width: 600px;
+background-color: #ddd;
+}
+
+.filho {
+width: 50%;
+background-color: #aaa;
+height: 100px;
+}</code></pre>
+
+        <p>O resultado é uma caixinha dentro da outra! A de dentro vai ter 300px de largura, porque 50% de 600 = 300.
+        </p>
+
+        <hr>
+
+        <h2>💡 Onde posso testar meu site?</h2>
+
+        <h3>📥 No seu computador (VS Code) – o que mais recomendo</h3>
+        <ol>
+            <li>Baixe o programa <strong>Visual Studio Code</strong>: <a href="https://code.visualstudio.com/"
+                    target="_blank">code.visualstudio.com</a></li>
+            <li>Abra ele e arraste seu arquivo <code>.html</code> pra dentro</li>
+            <li>Instale a extensão <strong>Live Server</strong></li>
+            <li>Clique com o botão direito no HTML e escolha “Open with Live Server”</li>
+        </ol>
+
+        <h3>🌐 Testar sem instalar nada</h3>
+        <p>Sites onde você cola o código e já vê o site funcionando:</p>
+        <ul>
+            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a> – simples e completo</li>
+            <li><a href="https://html-css-js.com/" target="_blank">HTML CSS JS Playground</a> – tem um bom exemplo sobre cada parte (HTML, CSS e JavaScript)</li>
+        </ul>
+
+        <h2>📁 Baixe um modelo pra brincar</h2>
+        <p>Pra não começar do zero, aqui tem um exemplo pronto:</p>
+        <a class="download" href="modelo.html" download>⬇️ Baixar modelo</a>
+        <a class="download" href="index.html" download>⬇️ Baixar essa tela a nivel de curiosidade</a>
+        <footer>
+            Feito com carinho por Davi para JC (Jesus Cristo)
+        </footer>
+    </div>
+
+</body>
+
+</html>
